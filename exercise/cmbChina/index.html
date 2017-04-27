@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>招商银行</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="swiper/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="swiper/animate.min.css">
+    <script src="js/common.js"></script>
+    <script src="swiper/swiper-3.4.2.min.js"></script>
+    <script src="swiper/swiper.animate1.0.2.min.js"></script>
+</head>
+<body>
+ <div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide page-1">
+            <div class="img-1">
+                <img src="images/indexTxt.png" alt="">
+                <span class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+                    <img src="images/indexFlowers01.png" alt="">
+                </span>
+                <span class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+                    <img src="images/indexFlowers02.png" alt="">
+                </span>
+            </div>
+            <div class="img-2 ani infinite" swiper-animate-effect="qqpulse" swiper-animate-duration="3s" swiper-animate-delay="0s">
+                <img src="images/indexElements.png" alt="">
+            </div>
+            <div class="img-3 ani infinite" swiper-animate-effect="qqpulse" swiper-animate-duration="3s" swiper-animate-delay="0.5s">
+                <img src="images/indexCloud.png" alt="">
+            </div>
+            <div class="img-4 ani infinite" swiper-animate-effect="qqpulse" swiper-animate-duration="3s" swiper-animate-delay="0.5s">
+                <img src="images/indexFlight.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-slide page-2">Slide 2</div>
+        <div class="swiper-slide page-3">Slide 3</div>
+    </div>
+     <div id="u-up" class="animated infinite slideInUp">
+         <img src="images/arrow-up.png" alt="">
+     </div>
+ </div>
+</body>
+</html>
+
+<script>
+	var mySwiper = new Swiper ('.swiper-container', {
+		direction: 'vertical',
+		loop: false,
+
+		onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+			swiperAnimateCache(swiper); //隐藏动画元素
+			swiperAnimate(swiper); //初始化完成开始动画
+		},
+		onSlideChangeEnd: function(swiper){
+			swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		}
+	})
+</script>
